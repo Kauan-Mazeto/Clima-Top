@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:host {
+    position: fixed;
+    inset: 0;
+    display: block;
+
+    .clima-container{
+        position: relative;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        background: url('https://picsum.photos/1920/1080?random=1');
+        
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Roboto', sans-serif;
+            width: 100%;
+            max-width: 420px;
+            padding: 50px;
+            backdrop-filter: blur(30px);
+            border-radius: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+
+            span {
+                font-size: 50px;
+                margin-bottom: 20px;
+                cursor: default;
+            }
+
+            h1 {
+                font-size: 35px;
+                color: white;
+                text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+                cursor: default;
+            }
+
+            button {
+                margin-top: 20px;
+                padding: 20px;
+                font-size: 20px;
+                border: none;
+                border-radius: 30px;
+                color: rgba(24, 24, 24, 0.842);
+                font-weight: bold;
+                cursor: pointer;
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+
+            &:hover {
+                transform: scale(1.05);
+            }
+
+        }
+    }
+}
