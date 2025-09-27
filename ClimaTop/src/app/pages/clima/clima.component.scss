@@ -12,7 +12,6 @@
         place-items: center;
         padding: 24px;
         background: url('https://picsum.photos/1920/1080?random=1');
-        
 
         .card {
             display: flex;
@@ -27,6 +26,7 @@
             border-radius: 25px;
             border: 2px solid rgba(255, 255, 255, 0.1);
             transition: transform 0.3s ease;
+
 
             span {
                 font-size: 50px;
@@ -58,7 +58,8 @@
             }
 
             &:hover {
-                transform: scale(1.05);
+                transform: translateY(-10px);
+                box-shadow: 4px 5px 7px rgba(255, 255, 255, 0.034);
             }
 
         }
