@@ -1,6 +1,7 @@
 export interface WeatherResponse {
-    weather: Weather[];
-    main: Main;
+  weather: Weather[];
+  main: Main;
+  name: string;
 }
 
 export interface Weather {

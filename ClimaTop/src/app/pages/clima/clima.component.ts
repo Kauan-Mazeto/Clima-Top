@@ -1,6 +1,9 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { RouteConfigLoadEnd, Router } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { OpenWeatherService } from '../../service/open-weather.service';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { WeatherResponse } from '../../models/wheater-response.model';
+import { catchError, of } from 'rxjs';
 
 
 @Component({
@@ -8,16 +11,22 @@ import { OpenWeatherService } from '../../service/open-weather.service';
   templateUrl: './clima.component.html',
   styleUrls: ['./clima.component.scss']
 })
-export class ClimaComponent implements OnInit {
+export class ClimaComponent {
 
   navegador = inject(Router);
   openWeatherService = inject(OpenWeatherService);
+  dadosClima = toSignal<WeatherResponse | null>(
+    this.openWeatherService.buscarInfoClimaCidadeAtual()
+    .pipe(
+      catchError(err => {
+        console.error('Erro ao buscar dados do clima:', err);
+        return of(null);
+      })
+    ),
+    { initialValue: null }
+  );
 
   constructor() { }
-
-  ngOnInit() {
-    this.openWeatherService.buscarInfoClimaCidadeAtual();
-  }
 
   navegarParaTeladePesquisa() {
     this.navegador.navigate(['/pesquisa']);
