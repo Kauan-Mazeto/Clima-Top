@@ -1,10 +1,28 @@
 <div class="clima-container">
 
   <div class="card">
-    <span>🌤️</span>
-    <h1 class="city">{{ dadosClima()?.name }}</h1>
-    <button (click)="navegarParaTeladePesquisa()">Pesquisar</button>
+    @if (dadosClima()) {
+      <h1 class="city">{{ dadosClima()?.name }}</h1>
+
+      <div class="temp">{{ dadosClima()?.main?.temp | number: '1.0-0' }}°C</div>
+
+      <div class="img-titulo">
+        @let clima = dadosClima()!.weather[0];
+        <img class="icon" [src]="'http://openweathermap.org/img/wn/' + clima.icon + '@2x.png'" alt="Ícone do clima">
+        <p class="desc">{{ clima.description | titlecase }}</p>
+      </div>
+
+      <div class="minmax">
+        <span>Min {{ dadosClima()?.main?.temp_min | number: '1.0-0' }}°C</span>
+        <span>Max {{ dadosClima()?.main?.temp_max | number: '1.0-0' }}°C</span>
+      </div>
+
+      <button (click)="navegarParaTeladePesquisa()">Pesquisar</button>
+    } @else{
+    
+      <p class="desc">Carregando...</p>
+    
+    }
   </div>
 
 </div>
-  

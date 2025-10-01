@@ -26,16 +26,9 @@
             border-radius: 25px;
             border: 2px solid rgba(255, 255, 255, 0.1);
             transition: transform 0.3s ease;
-
-
-            span {
-                font-size: 50px;
-                margin-bottom: 20px;
-                cursor: default;
-            }
-
-            h1 {
-                font-size: 35px;
+            
+            .city {
+                font-size: 40px;
                 color: white;
                 text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
                 cursor: default;
@@ -60,6 +53,41 @@
             &:hover {
                 transform: translateY(-10px);
                 box-shadow: 4px 5px 7px rgba(255, 255, 255, 0.034);
+            }
+
+            .temp {
+                font-size: 3.25rem;
+                font-weight: 700;
+                color: #ffffff;
+                line-height: 1;
+                text-shadow: 2px 4px 16px rgba(0, 0, 0, 0.35);
+            }
+
+            .img-titulo {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 12px;
+                margin: 0 0 16px ;
+                
+
+                .desc {
+                    color: rgba(255, 255, 255, 0.9);
+                    font-weight: 500;
+                }
+
+                .icon {
+                    width: 52px;
+                    height: 52px;
+                }
+            }
+
+            .minmax {
+                display: flex;
+                justify-content: center;
+                gap: 16px;
+                margin-top: 8px;
+                color: rgba(255, 255, 255, 0.7);
             }
 
         }

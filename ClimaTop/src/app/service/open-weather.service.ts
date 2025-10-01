@@ -12,14 +12,14 @@ export class OpenWeatherService {
   private apiKey = 'f39c61444538bcb34a7be173ade7f6ee';
   private apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
   private http = inject(HttpClient);
-  
+
   constructor() { }
 
   buscarInfoClimaCidadeAtual (): Observable<WeatherResponse> {
 
-    const urlCompleta = this.apiUrl + '?q=Dois%20Vizinhos&appid=' + this.apiKey + '&lang=pt_br&units=metrics';
-    console.log(urlCompleta);
+    const urlCompleta = this.apiUrl + '?q=Dois%20Vizinhos,PR,BR&appid=' + this.apiKey + '&lang=pt_br&units=metric';
 
+    setTimeout(() => {}, 2000);
     return this.http.get<WeatherResponse>(urlCompleta);
   }
 }
