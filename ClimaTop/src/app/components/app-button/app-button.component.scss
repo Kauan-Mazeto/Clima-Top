@@ -1,3 +1,17 @@
 :host {
-  
+  button {
+    margin-top: 20px;
+    padding: 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 30px;
+    color: rgba(24, 24, 24, 0.842);
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+  }
 }

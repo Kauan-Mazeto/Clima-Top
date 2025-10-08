@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, output } from '@angular/core';
+import { NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-app-button',
@@ -8,5 +9,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppButtonComponent { 
-  
+
+
+  onClick = output<void>();
 }
