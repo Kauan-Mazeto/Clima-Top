@@ -12,10 +12,7 @@
 
       <app-clima-cidade [clima]="dadosClima()!.weather[0]"></app-clima-cidade>
 
-      <div class="minmax">
-        <span>Min {{ dadosClima()?.main?.temp_min | number: '1.0-0' }}°C</span>
-        <span>Max {{ dadosClima()?.main?.temp_max | number: '1.0-0' }}°C</span>
-      </div>
+      <app-minmax-cidade [main]="dadosClima()!.main"></app-minmax-cidade>
 
       <button (click)="navegarParaTeladePesquisa()">Pesquisar</button>
     } @else{

@@ -10,13 +10,14 @@ import { TemperaturaCidadeComponent } from "../../components/temperatura-cidade/
 import { CarregarCidadeComponent } from "../../components/carregar-cidade/carregar-cidade.component";
 import { OpenWeatherService } from '../../services/open-weather.service';
 import { ClimaCidadeComponent } from "../../components/clima-cidade/clima-cidade.component";
+import { MinmaxCidadeComponent } from "../../components/minmax-cidade/minmax-cidade.component";
 
 
 @Component({
   selector: 'app-clima',
   standalone: true,
   templateUrl: './clima.component.html',
-  imports: [DecimalPipe, NomeCidadeComponent, TemperaturaCidadeComponent, CarregarCidadeComponent, ClimaCidadeComponent],
+  imports: [DecimalPipe, NomeCidadeComponent, TemperaturaCidadeComponent, CarregarCidadeComponent, ClimaCidadeComponent, MinmaxCidadeComponent],
   styleUrls: ['./clima.component.scss']
 })
 
