@@ -10,7 +10,7 @@
         {{ dadosClima()?.main?.temp | number: '1.0-0' }}°C
       </app-temperatura-cidade>
 
-      <app-clima-cidade [clima]="dadosClima()?.weather?.[0] ?? null"></app-clima-cidade>
+      <app-clima-cidade [clima]="dadosClima()!.weather[0]"></app-clima-cidade>
 
       <div class="minmax">
         <span>Min {{ dadosClima()?.main?.temp_min | number: '1.0-0' }}°C</span>
