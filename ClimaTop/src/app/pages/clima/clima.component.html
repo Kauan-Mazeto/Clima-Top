@@ -14,7 +14,8 @@
 
       <app-minmax-cidade [main]="dadosClima()!.main"></app-minmax-cidade>
 
-      <button (click)="navegarParaTeladePesquisa()">Pesquisar</button>
+      <app-app-button><button (click)="navegarParaTeladePesquisa()">Pesquisar</button></app-app-button>
+     
     } @else{
     
       <app-carregar-cidade [mensagem] =" mensagemCarregando "></app-carregar-cidade>
