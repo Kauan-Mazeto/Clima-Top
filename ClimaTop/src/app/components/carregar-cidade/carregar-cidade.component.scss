@@ -1,0 +1,14 @@
+:host {
+    .img-titulo {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin: 0 0 16px ;
+                
+        .desc {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+        }
+    }
+}

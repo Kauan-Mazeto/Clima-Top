@@ -2,15 +2,15 @@
 
   <div class="card">
     @if (dadosClima()) {
-      <h1 class="city">{{ dadosClima()?.name }}</h1>
+      <app-nome-cidade>
+        {{ dadosClima()?.name }}
+      </app-nome-cidade>
 
-      <div class="temp">{{ dadosClima()?.main?.temp | number: '1.0-0' }}°C</div>
+      <app-temperatura-cidade>
+        {{ dadosClima()?.main?.temp | number: '1.0-0' }}°C
+      </app-temperatura-cidade>
 
-      <div class="img-titulo">
-        @let clima = dadosClima()!.weather[0];
-        <img class="icon" [src]="'http://openweathermap.org/img/wn/' + clima.icon + '@2x.png'" alt="Ícone do clima">
-        <p class="desc">{{ clima.description | titlecase }}</p>
-      </div>
+      
 
       <div class="minmax">
         <span>Min {{ dadosClima()?.main?.temp_min | number: '1.0-0' }}°C</span>
@@ -20,7 +20,7 @@
       <button (click)="navegarParaTeladePesquisa()">Pesquisar</button>
     } @else{
     
-      <p class="desc">Carregando...</p>
+      <app-carregar-cidade [mensagem] =" mensagemCarregando "></app-carregar-cidade>
     
     }
   </div>

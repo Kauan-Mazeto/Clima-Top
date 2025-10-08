@@ -27,12 +27,6 @@
             border: 2px solid rgba(255, 255, 255, 0.1);
             transition: transform 0.3s ease;
             
-            .city {
-                font-size: 40px;
-                color: white;
-                text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
-                cursor: default;
-            }
 
             button {
                 margin-top: 20px;
@@ -53,14 +47,6 @@
             &:hover {
                 transform: translateY(-10px);
                 box-shadow: 4px 5px 7px rgba(255, 255, 255, 0.034);
-            }
-
-            .temp {
-                font-size: 3.25rem;
-                font-weight: 700;
-                color: #ffffff;
-                line-height: 1;
-                text-shadow: 2px 4px 16px rgba(0, 0, 0, 0.35);
             }
 
             .img-titulo {
