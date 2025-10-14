@@ -6,9 +6,10 @@ import { MinmaxCidadeComponent } from "../minmax-cidade/minmax-cidade.component"
 import { CarregarCidadeComponent } from "../carregar-cidade/carregar-cidade.component";
 import { WeatherResponse } from '../../models/wheater-response.model';
 import { DecimalPipe } from '@angular/common';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { OpenWeatherService } from '../../services/open-weather.service';
 import { catchError, of } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-clima-container',
@@ -20,15 +21,17 @@ import { catchError, of } from 'rxjs';
 })
 export class AppClimaContainerComponent {
 
-  mensagemCarregando: string = 'Carregando temperatura'
+   mensagemCarregando: string = 'Carregando temperatura'
   openWeather = inject(OpenWeatherService);
+  cidade = input.required<string>()
 
   dadosClima = toSignal<WeatherResponse | null>(
-    this.openWeather.buscarInfoClimaCidadeAtual()
-    .pipe(
-      catchError(err => {
-        console.error('Erro ao buscar dados do clima', err);
-        return of(null);
+    
+    toObservable(this.cidade).pipe(
+      switchMap(cidade => this.openWeather.buscarInfoClimaCidadeAtual(cidade)),
+      catchError((err) => {
+        console.error('Erro ao buscar dados', err);
+        return of(null)
       })
     ),
     {initialValue: null}

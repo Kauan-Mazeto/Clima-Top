@@ -1,21 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import {  AppClimaContainerComponent } from "../../components/clima-container/clima-container.component";
 
 @Component({
   selector: 'app-pesquisa',
   templateUrl: './pesquisa.component.html',
   styleUrls: ['./pesquisa.component.scss'],
-  imports: [AppClimaContainerComponent, AppClimaContainerComponent]
+  imports: [AppClimaContainerComponent]
 })
-export class PesquisaComponent implements OnInit {
+export class PesquisaComponent {
 
   constructor() { }
 
-  pesquisar() {
-    console.log('Pesquisar cidade');
-  }
+  cidadePesquisada = signal('Dois Vizinhos')
 
-  ngOnInit() {
+  pesquisar(nomeCidade: string) {
+    if (nomeCidade.trim()) {
+      this.cidadePesquisada.set(nomeCidade.trim());
+      alert('Cidade pesquisada: ' + this.cidadePesquisada());
+    }
   }
-
 }

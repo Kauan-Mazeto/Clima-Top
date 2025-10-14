@@ -1,3 +1,8 @@
-<app-clima-container>
-  <input type="text" placeholder="Digite o nome da cidade" (keyup.enter)="pesquisar()">
+<app-clima-container [cidade]="cidadePesquisada()">
+  <input 
+    type="text" 
+    placeholder="Digite o nome da cidade" 
+    #inputCidade 
+    (keyup.enter)="pesquisar(inputCidade.value)" 
+  />
 </app-clima-container>

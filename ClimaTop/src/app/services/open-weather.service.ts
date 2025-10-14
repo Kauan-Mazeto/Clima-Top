@@ -15,12 +15,12 @@ export class OpenWeatherService {
 
   constructor() { }
 
-  buscarInfoClimaCidadeAtual (): Observable<WeatherResponse> {
+  buscarInfoClimaCidadeAtual (cidade: string): Observable<WeatherResponse> {
+    const urlCompleta = this.apiUrl + '?q=' + encodeURIComponent(cidade) + '&appid='
+    + this.apiKey + '&lang=pt_br&units=metric'
 
-    const urlCompleta = this.apiUrl + '?q=Dois%20Vizinhos,PR,BR&appid=' + this.apiKey + '&lang=pt_br&units=metric';
-
-    setTimeout(() => {}, 2000);
     return this.http.get<WeatherResponse>(urlCompleta);
+
   }
 }
 
