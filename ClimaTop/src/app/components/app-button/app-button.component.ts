@@ -1,8 +1,7 @@
 import { ChangeDetectionStrategy, Component, output } from '@angular/core';
-import { NavigationEnd } from '@angular/router';
 
 @Component({
-  selector: 'app-app-button',
+  selector: 'app-button',
   imports: [],
   templateUrl: './app-button.component.html',
   styleUrls: ['./app-button.component.scss'],
