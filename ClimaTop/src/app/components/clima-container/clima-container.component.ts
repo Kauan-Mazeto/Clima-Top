@@ -13,7 +13,7 @@ import { catchError, of } from 'rxjs';
 @Component({
   selector: 'app-clima-container',
   standalone: true,
-  imports: [DecimalPipe, NomeCidadeComponent, TemperaturaCidadeComponent, ClimaCidadeComponent, MinmaxCidadeComponent, CarregarCidadeComponent],
+  imports: [DecimalPipe, NomeCidadeComponent, ClimaCidadeComponent, MinmaxCidadeComponent, CarregarCidadeComponent, TemperaturaCidadeComponent],
   templateUrl: './clima-container.component.html',
   styleUrls: ['./clima-container.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
